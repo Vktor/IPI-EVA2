@@ -1,10 +1,10 @@
 <?php
 include 'conexion.php';
 
-$nombre=$_POST['envio'];
+//$nombre=$_POST['envio'];
+$nombre="'Juancho'";
 
-
-$query ='INSERT INTO "Usuarios"(nombre_user) VALUES ('$nombre');';
+$query ='INSERT INTO "Usuarios"(nombre_user) VALUES ($nombre);';
 $result = pg_query($query) or die('La consulta fallo: ' . pg_last_error());
 
 pg_free_result($result);

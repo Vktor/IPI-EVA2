@@ -8,12 +8,13 @@ function nuevoAjax(){
  		} catch (E) {
  			xmlhttp = false;
  		}
+ 	}
 
 	if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
  		xmlhttp = new XMLHttpRequest();
 	}
 	return xmlhttp;
-	}
+}
 
 
 	function cargarContenido(){
@@ -22,17 +23,13 @@ function nuevoAjax(){
 		ajax.open("GET", "http://localhost/IPI-EVA2/Mostrar.php",true);
 		ajax.onreadystatechange=function() {
 			if (ajax.readyState==4) {
-				contenedor.innerHTML = ajax.responseText;
+				contenedor.innerHTML = ajax.responseText
 			}
 		}
 	 	ajax.send(null)
-	 //contenedor.style.textAlign='center';
-	
 	}
-	window.onload= function(){cargarContenido()}
 
-
-	function enviarcontenido(){
+		function enviarcontenido(){
 		var envio = document.getElementById('inpUser').value;
 		 ajax2=nuevoAjax();
 		ajax2.open("POST", "http://localhost/IPI-EVA2/registro.php",true);
@@ -43,8 +40,9 @@ function nuevoAjax(){
 		}
 		ajax2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		 ajax2.send("nombre="+envio)
-	}	
-		
-}
+		 
+		}	
+
+window.onload= function(){cargarContenido()}
 
 

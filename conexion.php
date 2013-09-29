@@ -1,12 +1,11 @@
 <?php
 $conect = pg_connect("host=localhost dbname=IPI-EVA2 user=postgres password=123456")
-    or die('No se ha podido conectar con mi DB: '. pg_last_error());
+    or die('No se ha podido conectar: '. pg_last_error());
 
 /*
-Consulta de prueba no tocar!
+CONSULTA DE PRUEBA QUE FUNCIONA NO TOCAR!
 $query = 'select*from "Usuarios";';
 $result = pg_query($query) or die('La consulta fallo: ' . pg_last_error());
-
 
 echo "<table>\n";
 while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
