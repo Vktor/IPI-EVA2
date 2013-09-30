@@ -52,18 +52,21 @@ function nuevoAjax(){
 
 	function sugerencia(str){
 		ajax3=nuevoAjax();
-		if (str=0) {
-			var q= document.getElementById('AjaxUser').innerHTML="";
-			
+		if (str.length=0) {
+		document.getElementById('AjaxUser').innerHTML="";	
+		return;
+		}else if(str==""){
+		document.getElementById('AjaxUser').innerHTML="";	
 		return;
 		}
 		
 		ajax3.onreadystatechange=function(){
 			if (ajax3.readyState==4) {
-				q= document.getElementById('AjaxUser').innerHTML=ajax3.responseText;
+			 document.getElementById("AjaxUser").innerHTML=ajax3.responseText;
 			}
 		}
-		ajax3.open("GET","http://localhost/IPI-EVA2/sugerencia.php",true);
+		
+		ajax3.open("GET","http://localhost/IPI-EVA2/sugerencia.php?q="+str,true);
 		ajax3.send();
 	}
 
