@@ -1,6 +1,6 @@
 <?php
 include 'conexion.php';
-$query = 'select*from "Usuarios";';
+$query = 'select id_user, nombre_user from "Usuarios";';
 $result = pg_query($query) or die('La consulta fallo: ' . pg_last_error());
 
 echo "<table>\n";
