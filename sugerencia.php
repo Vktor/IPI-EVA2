@@ -3,6 +3,8 @@ include 'conexion.php';
 $query = 'select id_user from "Usuarios";';
 $result = pg_query($query) or die('La consulta fallo: ' . pg_last_error());
 
+$
+
 
 //$q=$_GET["q"];
 $q="2";
@@ -11,11 +13,11 @@ if ($q>0) {
 	echo "entro al for <br>";
 	for ($i=0; $i<$q ; $i++) { 
 		echo "entro al segundo for";
-	$array=pg_fetch_array($result,0, pgsql_num);
+	$array=pg_fetch_array($result,null, PGSQL_ASSOC);
 		if($q==$array){
 			
-				$otro=pg_fetch_array($result,$i, pgsql_num);
-				echo "llego al if"+$otro;
+				$otro=pg_fetch_array($result,$i, PGSQL_ASSOC);
+				echo "";
 		
 		}
 	}
