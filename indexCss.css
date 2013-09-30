@@ -25,9 +25,16 @@ ul{
 	border: 1px solid #696969; */
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
-tr{
-	text-align: center;
+table{
+	margin: 0 auto;
+	font: 12px Helvetica, Arial, sans-serif;
 }
+p{
+	text-align: left;
+	font: bold 15px Helvetica, Arial, sans-serif;
+	margin-left: 10px;
+}
+
 
 #txt_Area{
 	width: 80%;

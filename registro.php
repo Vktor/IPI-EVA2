@@ -1,8 +1,9 @@
 <?php
 include 'conexion.php';
 
-//$nombre=$_POST['envio'];
-$nombre='Juancho';
+$nombre=$_POST["nombre"];
+//$nombre='Juancho';
+//echo $nombre;
 $tabla ='"Usuarios"';
 
 $query ="insert into ".$tabla."(nombre_user) values('".$nombre."')";

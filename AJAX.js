@@ -28,21 +28,40 @@ function nuevoAjax(){
 		}
 	 	ajax.send(null)
 	}
-
-		function enviarcontenido(){
+/*
+		function enviarcontenido(envio){
 		var envio = document.getElementById('inpUser').value;
 		 ajax2=nuevoAjax();
 		ajax2.open("POST", "http://localhost/IPI-EVA2/registro.php",true);
 		ajax2.onreadystatechange=function() {
 			if (ajax2.readyState==4) {
-				envio.innerHTML = ajax2.responseText
+				 ajax2=ajax2.responseText;
+				
 			}
 		}
-		ajax2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		 ajax2.send("nombre="+envio)
-		 
-		}	
 
+		ajax2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		 ajax2.send("&nombre="+envio)
+
+		}	
+*/
+
+	function enviarcontenido(nombre){
+		if(window.XMLHttpRequest){
+			var nombre =document.getElementById("inpUser").value;
+			ajax2= new XMLHttpRequest()
+		}
+		ajax2.onreadystatechange=function(){
+			if (ajax2.readyState==4) {
+				if (ajax2.status==200) {
+					alert(ajax2.responseText)
+				}
+			}
+		}
+	ajax2.open("POST","http://localhost/IPI-EVA2/registro.php", true);
+	ajax2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	ajax2.send("&nombre="+nombre);
+	}
 window.onload= function(){cargarContenido()}
 
 
